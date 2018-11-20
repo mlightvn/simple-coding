@@ -39,7 +39,7 @@ $raku = new \Raku\SimpleCoding\SimpleCoding();
 
 ## Common attributes
 
-|Attribute Name|Type|Description|h
+|Attribute Name|Type|Description|
 |-----|-----|-----|
 |isClearCache|boolean: false|True: Clear cached/compiled files every reload. Use for developing. In production, should be false. And clear all cached/compiled files in `storage/compiled/` folder.|
 
