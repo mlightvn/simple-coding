@@ -46,9 +46,8 @@ define("PHP_EXT"						, ".php");
 define('APP_HOST_NAME', $_SERVER['SERVER_NAME']);
 if(file_exists(  CONFIG_DOMAIN_DIR . APP_HOST_NAME . PHP_EXT)){
 	require_once(CONFIG_DOMAIN_DIR . APP_HOST_NAME . PHP_EXT);
-}else{
-	require_once(CONFIG_DOMAIN_DIR . "default.php"); // Production
 }
+require_once(CONFIG_DOMAIN_DIR . "default.php"); // Production
 
 if(!defined("VIEW_DIR")){
 	define("VIEW_DIR"					, ROOT_DIR 				. VIEW_DIR_NAME 	. DS);

@@ -17,4 +17,6 @@ if(!defined("TEMPLATES_DIR")){
 	define("TEMPLATES_DIR"				, VIEW_DIR 				. "templates" 	. DS);
 }
 
-define("AUTO_CLEAR_CACHED", false);
+if(!defined("AUTO_CLEAR_CACHED")){
+	define("AUTO_CLEAR_CACHED", false);
+}
