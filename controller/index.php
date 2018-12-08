@@ -3,7 +3,7 @@ include_once("../Raku/config/bootstrap.php");
 
 $raku = new \Raku\SimpleCoding\SimpleCoding();
 
-$title = "Simple Coding";
+$title = null;
 
 $data = ["title" => $title];
 

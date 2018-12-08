@@ -1,4 +1,3 @@
 <?php
 // User's custom constants here...
-return [
-];
+define("TEST_LABEL", "test");

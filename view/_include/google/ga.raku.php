@@ -1,4 +1,4 @@
-@if{((ENVIRONMENT === 'production') || (APP_HOST_NAME === 'simple-coding.coxanh.net'))}
+@if{((ENVIRONMENT === 'production'))}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84660939-8"></script>
 <script>

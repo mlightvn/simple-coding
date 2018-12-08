@@ -1,5 +1,4 @@
 <?php
-
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
@@ -20,7 +19,7 @@ define("RAKU_LIB_DIR"					, RAKU_ROOT_DIR 		. "lib" 			. DS);
 define("RAKU_SIMPLE_CODING_DIR"			, RAKU_ROOT_DIR 		. "SimpleCoding" 			. DS);
 define("RAKU_CONTROLLER_DIR"			, RAKU_ROOT_DIR 		. "Controller" 		. DS);
 define("RAKU_MODEL_DIR"					, RAKU_ROOT_DIR 		. "Model" 			. DS);
-// define("RAKU_VIEW_DIR"					, RAKU_ROOT_DIR 		. "View" 			. DS);
+// define("RAKU_CONTROLLER_DIR"					, RAKU_ROOT_DIR 		. "View" 			. DS);
 
 // PROJECT
 define("CONFIG_DIR"						, ROOT_DIR 				. "config" 			. DS);
@@ -34,10 +33,7 @@ define("STORAGE_TMP_DIR"				, STORAGE_DIR 			. "tmp" 			. DS);
 
 define("CONTROLLER_DIR"					, ROOT_DIR 				. "controller" 		. DS);
 define("MODEL_DIR"						, ROOT_DIR 				. "model" 			. DS);
-
-if(!defined("VIEW_DIR_NAME")){
-	define("VIEW_DIR_NAME"				, "view");
-}
+define("VIEW_DIR"						, ROOT_DIR 				. "view" 			. DS);
 
 // Common
 define("VIEW_RAKU_SUFFIX"				, ".raku.php");
@@ -49,20 +45,17 @@ if(file_exists(  CONFIG_DOMAIN_DIR . APP_HOST_NAME . PHP_EXT)){
 }
 require_once(CONFIG_DOMAIN_DIR . "default.php"); // Production
 
-if(!defined("VIEW_DIR")){
-	define("VIEW_DIR"					, ROOT_DIR 				. VIEW_DIR_NAME 	. DS);
-}
+define("VIEW_SHORTCODE_DIR"				, CONTROLLER_DIR 				. "shortcode" 	. DS);
 
-if(!defined("TEMPLATES_DIR")){
-	define("TEMPLATES_DIR"				, VIEW_DIR 				. "templates" 		. DS);
-}
+// require_once(RAKU_LIB_DIR . "debug.php");
+// require_once(RAKU_LIB_DIR . "functions.php");
 
 require_once(RAKU_ROOT_DIR . "RakuBase.class.php");
+// require_once(RAKU_SIMPLE_CODING_DIR . "SimpleCoding.class.php");
 require_once(RAKU_SIMPLE_CODING_DIR . "SimpleCoding.phar");
 
-$app_constants = require_once(CONFIG_DIR . "constants.php");
+require_once(CONFIG_DIR . "constants.php");
 require_once(CONFIG_DIR . "functions.php");
-
 
 // Auto load
 function autoload($path)
@@ -77,10 +70,24 @@ function autoload($path)
 	}
 }
 
+// require_once(RAKU_MODEL_DIR . "Database" . PHP_EXT);
+// require_once(RAKU_MODEL_DIR . "BaseModel" . PHP_EXT);
+
+// autoload(MODEL_DIR . "*" . PHP_EXT);
+
 function raku_include(string $template_path = NULL, $data = NULL)
 {
 	$raku = new \Raku\SimpleCoding\SimpleCoding();
 	$raku->view($template_path, $data);
+}
+
+function shortcode_include(string $file_path = NULL, $data = NULL)
+{
+	if(isset($data)){
+		extract($data);
+	}
+
+	require_once(VIEW_SHORTCODE_DIR . $file_path . PHP_EXT);
 }
 
 if(defined("DEBUG_MODE")){

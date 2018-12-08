@@ -1,19 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="/"><img src="/img/favicon.ico" alt="{{$title}}"> Simple Coding</a>
+	<a class="navbar-brand" href="/" id="app_title"><img src="/img/favicon.ico" alt="{{$title}}"> {{APP_TITLE}}</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="/documents/">Documents</a>
-			</li>
-			@if{(ENVIRONMENT !== 'production')}
-			<li class="nav-item">
-				<a class="nav-link" href="/demo/">Demo</a>
-			</li>
-			@endif
+{{--
+			<li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+			<li class="nav-item"><a class="nav-link" href="/functions/">Functions</a></li>
+			<li class="nav-item"><a class="nav-link" href="/tools/">Tools</a></li>
+			<li class="nav-item"><a class="nav-link" href="/knowledge/">Knowledge</a></li>
+--}}
+
 			<li class="nav-item">
 				<a class="nav-item btn btn-outline-success" href="https://www.paypal.me/ngocnam" target="_blank"><i class="fas fa-donate"></i> Donate </a>
 			</li>

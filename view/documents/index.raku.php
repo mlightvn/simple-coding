@@ -1,7 +1,7 @@
 @php
 $include_param = [
 	"title" 	=> $title,
-	"css" 		=> "index",
+	"css" 		=> "documents/index",
 ];
 
 @endphp
@@ -29,11 +29,11 @@ $include_param = [
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----default.php</td>
-					<td></td>
+					<td>	This file use to config for production</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----simple-code.raku.com.php</td>
-					<td>	&lt;= Your custom domain file ("simple-code.raku.com")</td>
+					<td>	&lt;= Your custom domain file ("simple-code.raku.com"). This could be dev or staging domain. You can also overwrite production configuration by creating file name same as production domain.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----simple-code2.raku.com.php</td>
@@ -92,8 +92,8 @@ $include_param = [
 					<td></td>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----view</td>
-					<td>	&lt;= This folder is for controlling program. It is the Controller in VMC model. You can change to another folder in "/config/domain/*.php" by `define("VIEW_DIR", "/your/new/view/path/");`. (Must have this "/" character at the end)</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----controller</td>
+					<td>	&lt;= This folder is for controlling program. It is the Controller in VMC model. You can change to another folder in "/config/domain/*.php" by `define("CONTROLLER_DIR", "/your/new/controller/path/");`. (Must have this "/" character at the end)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----index.php</td>
@@ -104,24 +104,28 @@ $include_param = [
 					<td></td>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----templates</td>
-					<td>	&lt;= This folder is for keeping templates code. It is the View in MVC model. (See in documents for more details). You can change to another folder in "/config/domain/*.php" by `define("TEMPLATES_DIR", "/your/new/templates/path/");`. (Must have this "/" character at the end)</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----js</td>
+					<td>	&lt;= JavaScript folder. (Optional)</td>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----index.raku.php</td>
-					<td>	&lt;= Default template file of `/view/index.php` file</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----css</td>
+					<td>	&lt;= CSS folder. (Optional)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----js</td>
-					<td>	&lt;= JavaScript folder. (Optional)</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----view</td>
+					<td>	&lt;= This folder is for keeping view/template code. It is the View in MVC model. (See in documents for more details). You can change to another folder in "/config/domain/*.php" by `define("VIEW_DIR", "/your/new/view/path/");`. (Must have this "/" character at the end)</td>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----css</td>
-					<td>	&lt;= CSS folder. (Optional)</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----index.raku.php</td>
+					<td>	&lt;= Default template file of `/view/index.php` file</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+					<td></td>
 				</tr>
 			</table>
 		</pre>
@@ -141,16 +145,16 @@ $include_param = [
 	<p>
 		<h3>Folder permission</h3>
 		<br>
-		Change permission for `<strong>storage</strong>` folder to be <strong>writable</strong>. Especially folder `<strong>/storage/compiled</strong>`.
+		Change permission for `<strong>storage</strong>` folder to be <strong>writable</strong>. Especially folder `<strong>storage/compiled</strong>`.
 		<br>
 		CentOS/Linux
 		<br>
-		<code>chmod -R 777 view/storage</code>
+		<code>chmod -R 777 storage</code>
 	</p>
 
 	<p>
-		<h3>Source code configuration</h3>
-		Example: /view/index.php
+		<h3>Sample code for controller</h3>
+		Example: controller/index.php
 		<br>
 		<pre class="border border-primary">include_once("../Raku/config/bootstrap.php");
 
@@ -160,14 +164,14 @@ $title = "Simple Coding";
 
 $data = ["title" => $title];
 
-$raku->view('index', $data); // &lt= Do not put extension in template file name.
+$raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php") in template file name.
 </pre>
 	</p>
 
 	<br>
-	<h2>Sample for template code</h2>
+	<h2>Sample code for view</h2>
 	<br>
-	Example: /view/templates/index.raku.php
+	Example: view/index.raku.php
 	<br>
 	<table class="table table-bordered table-striped table-hover table-condensed ">
 		<thead>
@@ -217,17 +221,17 @@ $raku->view('index', $data); // &lt= Do not put extension in template file name.
 				</td>
 			</tr>
 			<tr>
-				<td>TEMPLATES_DIR
+				<td>VIEW_DIR
 					<br>
 					<i>You can configure in `config/domain/*.php`</i>
 				</td>
 				<td>
 					<code>
-						@{{ TEMPLATES_DIR }}
+						@{{ VIEW_DIR }}
 					</code>
 				</td>
 				<td>
-					{{ TEMPLATES_DIR }}
+					{{ VIEW_DIR }}
 				</td>
 			</tr>
 
@@ -327,8 +331,12 @@ $raku->view('index', $data); // &lt= Do not put extension in template file name.
 				<td>
 					<code>
 						@@hr{(&quot;red&quot;)}<br>
+						@@hrRed<br>
 						@@hr{('#339900')}<br>
+						@@hrBlue<br>
 						@@hr<br>
+						@@hrWhite<br>
+						@@hrYellow<br>
 						@@@hr{(&quot;red&quot;)}<br>
 						@@@@hr{('#339900')}<br>
 						@@@hr
@@ -336,8 +344,12 @@ $raku->view('index', $data); // &lt= Do not put extension in template file name.
 				</td>
 				<td>
 						@hr{("red")}
+						@hrRed
 						@hr{('#339900')}
+						@hrBlue
 						@hr
+						@hrWhite
+						@hrYellow
 						@@hr{("red")}<br>
 						@@hr{('#339900')}<br>
 						@@hr
@@ -560,7 +572,7 @@ $raku->view('index', $data); // &lt= Do not put extension in template file name.
 				<td>CSS test</td>
 				<td>
 					<code>
-						&lt;link rel="stylesheet" href="/css/index.css"&gt;
+						&lt;link rel="stylesheet" href="/css/documents/index.css"&gt;
 						<br><br>
 						&lt;button type="button" class="sample-button"&gt;CSS button&lt;/button&gt;
 					</code>

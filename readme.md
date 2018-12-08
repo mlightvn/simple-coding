@@ -36,6 +36,7 @@ $raku = new \Raku\SimpleCoding\SimpleCoding();
 |Function Name|Parametters|Description|
 |-----|-----|-----|
 |view($source_file_path, $data);|$source_file_path: php file. Similar to blade file path in Laravel.&br;$data: array of parametters (variables) for source file.|Compile source file to compiled file, then display on screen.|
+||||
 
 ## Common attributes
 

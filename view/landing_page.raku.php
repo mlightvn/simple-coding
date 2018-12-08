@@ -1,16 +1,12 @@
-@php
-$header_params = [
-	"title"         => $title,
-	"css"           => "landing_page/index",
-];
-@endphp
-
-@include{("_include/header", $header_params)}
+@include{("_include/header", [
+	"title" 			=> $title,
+	"css" 				=> "landing_page/index",
+])}
 
 	<div class="jumbotron hero">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-pull-3 get-it">
+				<div class="col-md-6 col-md-pull-6 get-it">
 					<h1><img src="/img/logo.png" alt="{{$title}}" width="40px"> Simple Coding</h1>
 					<p>Write single PHP page with simple code</p>
 					<p>
@@ -21,11 +17,11 @@ $header_params = [
 						<a class="btn btn-success btn-lg" role="button" href="https://github.com/namtenten/simple-coding" target="_blank"><i class="fab fa-github"></i> GitHub<a>
 					</p>
 				</div>
-				<div class="col-md-12 col-md-push-9 phone-preview" style="color: #ffffff;">
-					<div class="col-md-12">
+				<div class="col-md-12 col-md-push-6 phone-preview" style="color: #ffffff;">
+					<div class="">
 						<h3>Sample</h3>
 					</div>
-					<div class="col-md-12">
+					<div class="">
 							<pre class="border border-primary p-2 text-white">include_once("../Raku/config/bootstrap.php");
 
 $raku = new \Raku\SimpleCoding\SimpleCoding();

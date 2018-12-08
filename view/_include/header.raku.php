@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{(isset($title) ? ($title . ' | ') : '')}}Simple Coding</title>
+	<title>{{((isset($title)) ? ($title . ' | ') : '')}}{{APP_TITLE}}</title>
 	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +13,12 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="/css/styles.css">
 	@if{(isset($css) && (!empty($css)))}
 	<link rel="stylesheet" href="/css/{{$css}}.css">
 	@endif
 
-@if{((ENVIRONMENT === 'production') || (APP_HOST_NAME === 'simple-coding.coxanh.net'))}
+@if{((ENVIRONMENT === 'production'))}
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
