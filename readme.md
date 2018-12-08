@@ -5,7 +5,7 @@
 ```bin
 <VirtualHost *:80>
     ServerName "simple-coding.raku.nam"
-    DocumentRoot "/var/www/vhosts/raku/simple-coding/view/"
+    DocumentRoot "/var/www/vhosts/raku/simple-coding/controller/"
     ErrorLog logs/simple-coding.error.log
     CustomLog logs/simple-coding.access.log combined env=!no_log
 
@@ -35,8 +35,7 @@ $raku = new \Raku\SimpleCoding\SimpleCoding();
 
 |Function Name|Parametters|Description|
 |-----|-----|-----|
-|view($source_file_path, $data);|$source_file_path: php file. Similar to blade file path in Laravel.&br;$data: array of parametters (variables) for source file.|Compile source file to compiled file, then display on screen.|
-||||
+|view($source_file_path, $data);|$source_file_path: php file. Similar to blade file path in Laravel. &br; $data: array of parametters (variables) for source file.|Compile source file to compiled file, then display on screen.|
 
 ## Common attributes
 
@@ -46,7 +45,7 @@ $raku = new \Raku\SimpleCoding\SimpleCoding();
 
 # Sample
 
-Please look in `view/` folder for sample source code.
+Please look in `controller/` and `view/` folder for sample source code.
 
 # Deploy to production
 + Deploy latest source code files.
