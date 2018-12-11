@@ -34,6 +34,7 @@ define("STORAGE_TMP_DIR"				, STORAGE_DIR 			. "tmp" 			. DS);
 define("CONTROLLER_DIR"					, ROOT_DIR 				. "controller" 		. DS);
 define("MODEL_DIR"						, ROOT_DIR 				. "model" 			. DS);
 define("VIEW_DIR"						, ROOT_DIR 				. "view" 			. DS);
+define("SHORTCODE_DIR"					, ROOT_DIR 				. "shortcode" 		. DS);
 
 // Common
 define("VIEW_RAKU_SUFFIX"				, ".raku.php");
@@ -45,13 +46,7 @@ if(file_exists(  CONFIG_DOMAIN_DIR . APP_HOST_NAME . PHP_EXT)){
 }
 require_once(CONFIG_DOMAIN_DIR . "default.php"); // Production
 
-define("VIEW_SHORTCODE_DIR"				, CONTROLLER_DIR 				. "shortcode" 	. DS);
-
-// require_once(RAKU_LIB_DIR . "debug.php");
-// require_once(RAKU_LIB_DIR . "functions.php");
-
 require_once(RAKU_ROOT_DIR . "RakuBase.class.php");
-// require_once(RAKU_SIMPLE_CODING_DIR . "SimpleCoding.class.php");
 require_once(RAKU_SIMPLE_CODING_DIR . "SimpleCoding.phar");
 
 require_once(CONFIG_DIR . "constants.php");
@@ -87,7 +82,7 @@ function shortcode_include(string $file_path = NULL, $data = NULL)
 		extract($data);
 	}
 
-	require_once(VIEW_SHORTCODE_DIR . $file_path . PHP_EXT);
+	require_once(SHORTCODE_DIR . $file_path . PHP_EXT);
 }
 
 if(defined("DEBUG_MODE")){

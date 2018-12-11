@@ -8,6 +8,8 @@ $arr 	= [
 		"author" 	=> [
 			"name" 				=> "Nguyen Ngoc Nam",
 			"year_old" 			=> 1,
+			"published_year" 	=> 2018,
+			"string_of_number" 	=> "10",
 		],
 	];
 
