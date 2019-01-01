@@ -14,124 +14,169 @@ $include_param = [
 	<h3>Folders structure</h3>
 	<div class="border border-primary">
 		<pre>
-			<table>
+			<table class="table-hover">
 				<tr>
 					<td>SimpleCode</td>
+					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----config</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----domain</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----default.php</td>
-					<td>	This file use to config for production</td>
+					<td></td>
+					<td>This file use to config for production</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----simple-code.raku.com.php</td>
-					<td>	&lt;= Your custom domain file ("simple-code.raku.com"). This could be dev or staging domain. You can also overwrite production configuration by creating file name same as production domain.</td>
+					<td></td>
+					<td>&lt;= Your custom domain file ("simple-code.raku.com"). This could be dev or staging domain. You can also overwrite production configuration by creating file name same as production domain.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----simple-code2.raku.com.php</td>
-					<td>	&lt;= Your custom domain file ("simple-code2.raku.com")</td>
+					<td></td>
+					<td>&lt;= Your custom domain file ("simple-code2.raku.com")</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----simple-code3.raku.com.php</td>
-					<td>	&lt;= Your custom domain file ("*.raku.com")</td>
+					<td></td>
+					<td>&lt;= Your custom domain file ("*.raku.com")</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----constants.php</td>
-					<td>	&lt;= Add your custom constants here. Then you can use every where.</td>
+					<td></td>
+					<td>&lt;= Add your custom constants here. Then you can use every where.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----functions.php</td>
-					<td>	&lt;= Add your custom functions here. Then you can use every where.</td>
+					<td></td>
+					<td>&lt;= Add your custom functions here. Then you can use every where.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----Raku</td>
-					<td>	&lt;= Simple Coding package is here. You should not change any in here. You can configure in your "/config/domain/(*).php" (your domain php file)</td>
+					<td></td>
+					<td>&lt;= Simple Coding package is here. You should not change any in here. You can configure in your "/config/domain/(*).php" (your domain php file)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----storage</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----cached</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----compiled</td>
-					<td>	&lt;= Compiled files stay here.</td>
+					<td></td>
+					<td>&lt;= Compiled files stay here.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----log</td>
-					<td>	&lt;= Logged files stay here.</td>
+					<td></td>
+					<td>&lt;= Logged files stay here.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----tmp</td>
-					<td>	&lt;= Temporary files stay here.</td>
+					<td></td>
+					<td>&lt;= Temporary files stay here.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----controller</td>
-					<td>	&lt;= This folder is for controlling program. It is the Controller in VMC model. You can change to another folder in "/config/domain/*.php" by `define("CONTROLLER_DIR", "/your/new/controller/path/");`. (Must have this "/" character at the end)</td>
+					<td></td>
+					<td>&lt;= This folder is for controlling program. It is the Controller in VMC model. You can change to another folder in "/config/domain/*.php" by `define("CONTROLLER_DIR", "/your/new/controller/path/");`. (Must have this "/" character at the end)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----index.php</td>
-					<td>	&lt;= Default index file</td>
+					<td></td>
+					<td>&lt;= Default index file</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----js</td>
-					<td>	&lt;= JavaScript folder. (Optional)</td>
+					<td>(Optional)</td>
+					<td>&lt;= JavaScript folder.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----css</td>
-					<td>	&lt;= CSS folder. (Optional)</td>
+					<td>(Optional)</td>
+					<td>&lt;= CSS folder.</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
 					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----view</td>
-					<td>	&lt;= This folder is for keeping view/template code. It is the View in MVC model. (See in documents for more details). You can change to another folder in "/config/domain/*.php" by `define("VIEW_DIR", "/your/new/view/path/");`. (Must have this "/" character at the end)</td>
+					<td></td>
+					<td>&lt;= This folder is for keeping view/template code. It is the View in MVC model. (See in documents for more details). You can change to another folder in "/config/domain/*.php" by `define("VIEW_DIR", "/your/new/view/path/");`. (Must have this "/" character at the end)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----index.raku.php</td>
-					<td>	&lt;= Default template file of `/view/index.php` file</td>
+					<td></td>
+					<td>&lt;= Default template file of `/view/index.php` file</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|----shortcode</td>
+					<td>(Optional)</td>
+					<td>&lt;= Component folder, or any custom php code here</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|----sample.php</td>
+					<td>(Optional)</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+					<td></td>
 					<td></td>
 				</tr>
 			</table>
 		</pre>
 
 	</div>
-	<br><br>
+	<br>
+	@hrGreen
 
 	<h2>Installation</h2>
 	<p>
@@ -153,6 +198,35 @@ $include_param = [
 	</p>
 
 	<p>
+		<h3>Apache configuration</h3>
+		<br>
+		<pre class="border border-primary">
+&lt;VirtualHost *:80&gt;
+    ServerName "simple-coding.raku.nam"
+    DocumentRoot "/var/www/vhosts/raku/simple-coding/controller/"
+    ErrorLog logs/simple-coding.error.log
+    CustomLog logs/simple-coding.access.log combined env=!no_log
+
+    &lt;Directory "/var/www/vhosts/raku/simple-coding/"&gt;
+	DirectoryIndex index.php index.html
+	Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+
+&lt;/VirtualHost&gt;
+		</pre>
+		Then restart/reload apache<br>
+		<code>
+			systemctl restart httpd
+		</code>
+	</p>
+
+	<br>
+	@hrGreen
+	<br>
+
+	<p>
 		<h3>Sample code for controller</h3>
 		Example: controller/index.php
 		<br>
@@ -169,6 +243,9 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 	</p>
 
 	<br>
+	@hrGreen
+	<br>
+
 	<h2>Sample code for view</h2>
 	<br>
 	Example: view/index.raku.php
@@ -272,6 +349,18 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 				<td></td>
 				<td>
 					<code>
+						@{!!$p1!!}
+					</code>
+				</td>
+				<td>
+					{!!$p1!!}
+				</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>
+					<code>
 						@{{$p2}}
 					</code>
 				</td>
@@ -333,10 +422,15 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 						@@hr{(&quot;red&quot;)}<br>
 						@@hrRed<br>
 						@@hr{('#339900')}<br>
+						@@hrGreen<br>
+						@@hr{('#007bff')}<br>
 						@@hrBlue<br>
+						@@hrYellow<br>
+						@@hr{('#9900ff')}<br>
+						@@hrPurple<br>
 						@@hr<br>
 						@@hrWhite<br>
-						@@hrYellow<br>
+						&lt;b&gt;Escape ↓&lt;/b&gt;<br>
 						@@@hr{(&quot;red&quot;)}<br>
 						@@@@hr{('#339900')}<br>
 						@@@hr
@@ -346,13 +440,19 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 						@hr{("red")}
 						@hrRed
 						@hr{('#339900')}
+						@hrGreen
+						@hr{('#007bff')}
 						@hrBlue
+						@hrYellow
+						@hr{('#9900ff')}
+						@hrPurple
 						@hr
 						@hrWhite
-						@hrYellow
+						<b>Escape ↓</b><br>
 						@@hr{("red")}<br>
 						@@hr{('#339900')}<br>
 						@@hr
+
 				</td>
 			</tr>
 			<tr>
@@ -503,7 +603,7 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 			</tr>
 
 			<tr>
-				<td>Include</td>
+				<td>Include other views (raku file)</td>
 				<td>
 					<code>@@include{('documents/test1')}</code>
 				</td>
@@ -514,19 +614,32 @@ $raku->view('index', $data); // &lt= Do not put extension (".php", or ".raku.php
 			<tr>
 				<td></td>
 				<td>
-					<code>@@include{(<br>
+					<code>@@d{($json_string)}&lt;br&gt;&lt;br&gt;<br>
+					@@include{(<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;'sub1/test1', [<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"json_string" 		=> $json_string,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"line2" 			=> "Line 2",<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;])}</code>
 				</td>
 				<td>
+					@d{($json_string)}<br><br>
 					@include{('sub1/test1', [
 							"json_string" 		=> $json_string,
 							"line2" 			=> "Line 2",
 					])}
 				</td>
 			</tr>
+
+			<tr>
+				<td>ShortCode</td>
+				<td>
+					<code>@@shortcode{('sample')}</code>
+				</td>
+				<td>
+					@shortcode{('sample')}
+				</td>
+			</tr>
+
 			<tr>
 				<td>@@php</td>
 				<td>
